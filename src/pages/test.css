@@ -1,0 +1,14 @@
+/* 会被编译为 .test-1bac23 这种随机类名，避免冲突 */
+.test {
+  color: red;
+}
+
+/* 这种写法等价于 .test，即 CSS Module 默认为我们添加了 :local */
+:local(.test) {
+  color: red;
+}
+
+/* 全局类名不会被重新编译，保持原汁原味的 .test */
+:global(.test) {
+  color: blue;
+}
