@@ -1,5 +1,5 @@
 {
-  "name": "weibo-app",
+  "name": "web-react-03-weibo-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,10 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "build:demo": "PUBLIC_URL=$npm_package_name npm run build",
+    "push": "bash script/push.sh",
+    "pack": "npm run build && npm run push",
+    "pack:demo": "npm run build:demo && npm run push",
     "test": "react-app-rewired test",
     "eject": "react-app-rewired eject"
   },
