@@ -1,7 +1,6 @@
-import { Spin } from 'antd';
+import Loading from 'components/Loading';
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import styles from './index.module.scss';
 
 const Home = lazy(() => import('../pages/Home'));
 const Login = lazy(() => import('../pages/Login'));
@@ -10,11 +9,7 @@ const Demo = lazy(() => import('../pages/Demo'));
 
 const Router = () => (
   <Suspense
-    fallback={
-      <div className={styles.spin}>
-        <Spin size="large" />
-      </div>
-    }
+    fallback={<Loading />}
   >
     <Switch>
       <Route exact path="/" component={Home} />

@@ -1,9 +1,8 @@
 import { getAccess } from 'actions/account';
-import { Spin } from 'antd';
+import Loading from 'components/Loading';
 import queryString from 'query-string';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'redux-react-hook';
-import styles from '../../router/index.module.scss';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -11,10 +10,7 @@ const Login = () => {
   useEffect(() => {
     code && dispatch(getAccess({ code }));
   }, [code, dispatch]);
-  return <div className={styles.spin}>
-    <Spin size="large" />
-    <p>登录中，请稍候……</p>
-  </div>;
+  return <Loading tip="登录中，请稍候……" />;
 };
 
 export default Login;
