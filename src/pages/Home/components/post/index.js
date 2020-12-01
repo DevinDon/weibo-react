@@ -20,7 +20,7 @@ const getPostTitle = (
       <div className={styles.userInfo}>
         <div>{user.screen_name}</div>
         <div className={styles.extra}>
-          {moment(created_at).fromNow()} 来自 <span dangerouslySetInnerHTML={{ __html: source }} />
+          {moment(new Date(created_at)).fromNow()} 来自 <span dangerouslySetInnerHTML={{ __html: source }} />
         </div>
       </div>
     </div>

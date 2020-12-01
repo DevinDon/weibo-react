@@ -88,7 +88,7 @@ const CommentsList = ({ id }) => {
                 <div>
                   <span>{user.name}</span>
                   <span className={styles.extra}>
-                    {moment(created_at).fromNow()}
+                    {moment(new Date(created_at)).fromNow()}
                   </span>
                 </div>
               }
