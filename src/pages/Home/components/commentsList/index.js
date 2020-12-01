@@ -11,7 +11,7 @@ const mapStateComments = state => state.comments;
 const uid = getUid();
 const { confirm } = Modal;
 
-const CommentsList = ({ id }) => {
+export const CommentsList = ({ id }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const { comments = [], page = 0, total = 0 } = useMappedState(mapStateComments);

@@ -4,7 +4,7 @@ import queryString from 'query-string';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'redux-react-hook';
 
-const Login = () => {
+export const Login = () => {
   const dispatch = useDispatch();
   const { query: { code } } = queryString.parseUrl(window.location.href);
   useEffect(() => {

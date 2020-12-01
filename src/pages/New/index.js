@@ -8,7 +8,7 @@ import styles from './index.module.scss';
 
 const { TextArea } = Input;
 
-const New = ({ match } = {}) => {
+export const New = ({ match }) => {
   const dispatch = useDispatch();
   const { params: { id } } = match;
   const [value, setValue] = useState('');

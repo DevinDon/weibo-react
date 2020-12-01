@@ -6,7 +6,7 @@ import React from 'react';
 import { useDispatch } from 'redux-react-hook';
 import styles from './index.module.scss';
 
-const getPostTitle = (
+export const getPostTitle = (
   user,
   created_at,
   source,

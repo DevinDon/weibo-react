@@ -12,7 +12,7 @@ import styles from './index.module.scss';
 
 const mapStateTimeline = state => state.timeline;
 
-const Home = () => {
+export const Home = () => {
   const dispatch = useDispatch();
   const {
     home: { posts = [], page } = {},
