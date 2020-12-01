@@ -8,8 +8,7 @@ export function getAccess(params = {}) {
       const { access_token, uid } = await api.getAccess(params);
       localStorage.setItem(ACCESS_TOKEN_KEY, access_token);
       localStorage.setItem(UID_KEY, uid);
-      // eslint-disable-next-line no-console
-      console.log(access_token, uid);
+      message.success('登录成功');
     } catch (e) {
       message.error('登录失败');
     }
