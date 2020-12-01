@@ -46,9 +46,8 @@ const Home = () => {
             id,
             ...rest
           }) => (
-              <>
+              <div key={id}>
                 <Post
-                  key={id}
                   id={id}
                   isCurrent={current === id}
                   {...rest}
@@ -57,7 +56,7 @@ const Home = () => {
                   current === id &&
                   <CommentsList id={current} />
                 }
-              </>
+              </div>
             ))
         }
       </InfiniteScroll>
