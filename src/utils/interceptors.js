@@ -10,10 +10,10 @@ const responseInterceptors = [
       return Promise.reject(response);
     },
     fail(err) {
-      return Promise.reject({
+      return Promise.reject(new Error({
         code: err.response.data.error_code,
         message: err.response.data.error,
-      });
+      }));
     }
   }
 ];
@@ -26,11 +26,12 @@ const requestInterceptors = [
       return config;
     },
     fail(err) {
+      // eslint-disable-next-line no-console
       console.error('request error: ', err);
       return Promise.reject(err);
     }
   }
-]
+];
 
 const interceptors = {
   response: responseInterceptors,
@@ -40,10 +41,10 @@ const interceptors = {
 function doInstall(instance, options = {}) {
   const { type } = options;
   interceptors[type]
-    .forEach((interceptor) => {
+    .forEach(interceptor => {
       const { success, fail } = interceptor;
       instance.interceptors[type].use(success, fail);
-    })
+    });
 }
 
 export function install(instance, option = {}) {
@@ -52,5 +53,5 @@ export function install(instance, option = {}) {
   });
   doInstall(instance, {
     type: 'response',
-  })
+  });
 }

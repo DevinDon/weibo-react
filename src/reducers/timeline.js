@@ -1,4 +1,4 @@
-import { GET_HOME_TIMELINE, GET_PUBLIC_TIMELINE, SET_CURRENT_POST } from "../constants/actions";
+import { GET_HOME_TIMELINE, GET_PUBLIC_TIMELINE, SET_CURRENT_POST } from '../constants/actions';
 
 const initState = {
   home: { posts: [], page: 0 }
@@ -16,12 +16,12 @@ export default function reducer(state = initState, action) {
           posts: [...state.home.posts, ...statuses],
           page,
         },
-      }
+      };
     case SET_CURRENT_POST:
       return {
         ...state,
         current: id,
-      }
+      };
     default:
       return state;
   }

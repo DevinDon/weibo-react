@@ -20,7 +20,7 @@ const Home = () => {
   } = useMappedState(mapStateTimeline);
   const handleInfiniteOnLoad = () => {
     dispatch(getPublicTimeline({ page: page + 1 }));
-  }
+  };
 
   return (
     <div className={styles.container}>

@@ -1,12 +1,10 @@
-import React from 'react';
-import { Card } from 'antd';
-import { RetweetOutlined, LikeOutlined, MessageOutlined } from '@ant-design/icons';
-import moment from 'moment';
-import { useDispatch } from 'redux-react-hook';
+import { LikeOutlined, MessageOutlined, RetweetOutlined } from '@ant-design/icons';
 import { setCurrentPost } from 'actions/timeline';
+import { Card } from 'antd';
+import moment from 'moment';
+import React from 'react';
+import { useDispatch } from 'redux-react-hook';
 import styles from './index.module.scss';
-
-
 
 const getPostTitle = (
   user,
@@ -49,7 +47,7 @@ const Post = ({
     } else {
       dispatch(setCurrentPost({ id: isCurrent ? null : id }));
     }
-  }
+  };
 
   return (
     <Card
@@ -65,16 +63,16 @@ const Post = ({
         )
       }
       actions={type ? [] : [
-        <div>
-          <RetweetOutlined key="retweet" />
+        <div key="retweet">
+          <RetweetOutlined />
           <span> {reposts_count || ''}</span>
         </div>,
-        <div>
-          <LikeOutlined key="like" />
+        <div key="like">
+          <LikeOutlined />
           <span> {attitudes_count || ''}</span>
         </div>,
-        <div onClick={handleClickComment}>
-          <MessageOutlined key="message" />
+        <div onClick={handleClickComment} key="message">
+          <MessageOutlined />
           <span> {comments_count || ''}</span>
         </div>,
       ]}
@@ -100,7 +98,7 @@ const Post = ({
         </ul>
       </div>
     </Card>
-  )
-}
+  );
+};
 
 export default Post;

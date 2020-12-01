@@ -8,5 +8,5 @@ module.exports = function (app) {
       pathRewrite: { '/proxy': '/' }, // 将对应地址映射到 /proxy 路径下
       changeOrigin: true,
     })
-  )
-}
+  );
+};

@@ -1,5 +1,5 @@
 import * as api from '../api/timeline';
-import { GET_HOME_TIMELINE, SET_CURRENT_POST, GET_PUBLIC_TIMELINE } from '../constants/actions';
+import { GET_HOME_TIMELINE, GET_PUBLIC_TIMELINE, SET_CURRENT_POST } from '../constants/actions';
 import { resetComments } from './comments';
 
 export function getHomeTimeline(params = {}) {
@@ -10,7 +10,7 @@ export function getHomeTimeline(params = {}) {
       payload: result,
       params,
     });
-  }
+  };
 }
 
 export function getPublicTimeline(params = {}) {
@@ -21,7 +21,7 @@ export function getPublicTimeline(params = {}) {
       payload: result,
       params,
     });
-  }
+  };
 }
 
 export function setCurrentPost(payload = {}) {
@@ -31,5 +31,5 @@ export function setCurrentPost(payload = {}) {
       type: SET_CURRENT_POST,
       payload,
     });
-  }
+  };
 }
