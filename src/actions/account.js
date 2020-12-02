@@ -1,6 +1,6 @@
 import { message } from 'antd';
 import * as api from '../api/account';
-import { ACCESS_TOKEN_KEY, UID_KEY } from '../constants';
+import { ACCESS_TOKEN_KEY, REDIRECT_URI, UID_KEY } from '../constants';
 
 export function getAccess(params = {}) {
   return async () => {
@@ -12,6 +12,6 @@ export function getAccess(params = {}) {
     } catch (e) {
       await message.error('登录失败', 1.5);
     }
-    window.location.href = '/';
+    window.location.href = REDIRECT_URI;
   };
 }
