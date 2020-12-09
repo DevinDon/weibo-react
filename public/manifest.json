@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Weibo App",
+  "name": "微博客户端 - Weibo App - 九章算法课程项目",
   "icons": [
     {
       "src": "favicon.ico",

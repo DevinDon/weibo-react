@@ -1,17 +1,17 @@
-import React, { useEffect, useCallback, useState } from 'react';
-import { List, Avatar, Card, Button, Input, Row, Col, Modal } from 'antd';
-import { useDispatch, useMappedState } from 'redux-react-hook';
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import moment from 'moment';
-import { getComments, createComment, deleteComment } from 'actions/comments';
+import { createComment, deleteComment, getComments } from 'actions/comments';
+import { Avatar, Button, Card, Col, Input, List, Modal, Row } from 'antd';
 import { COMMENT_PAGESIZE, getUid } from 'constants/index';
+import moment from 'moment';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useMappedState } from 'redux-react-hook';
 import styles from './index.module.scss';
 
 const mapStateComments = state => state.comments;
 const uid = getUid();
 const { confirm } = Modal;
 
-const CommentsList = ({ id }) => {
+export const CommentsList = ({ id }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const { comments = [], page = 0, total = 0 } = useMappedState(mapStateComments);
@@ -35,7 +35,7 @@ const CommentsList = ({ id }) => {
     param.append('comment', value);
     dispatch(createComment(param, false));
     setValue('');
-  }
+  };
 
   const handleDeleteComment = (e, id) => {
     e.preventDefault();
@@ -48,8 +48,8 @@ const CommentsList = ({ id }) => {
       onOk() {
         dispatch(deleteComment(param));
       }
-    })
-  }
+    });
+  };
 
   return (
     <Card className={styles.commentsList}>
@@ -57,7 +57,7 @@ const CommentsList = ({ id }) => {
         <Col span={20}>
           <Input
             value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={e => setValue(e.target.value)}
           />
         </Col>
         <Col span={4}>
@@ -77,7 +77,7 @@ const CommentsList = ({ id }) => {
             key={id}
             actions={
               uid === user.idstr ?
-                [<a href="#!" onClick={(e) => handleDeleteComment(e, id)}>删除</a>] : []
+                [<a href="#!" key={id} onClick={e => handleDeleteComment(e, id)}>删除</a>] : []
             }
           >
             <List.Item.Meta
@@ -88,7 +88,7 @@ const CommentsList = ({ id }) => {
                 <div>
                   <span>{user.name}</span>
                   <span className={styles.extra}>
-                    {moment(created_at).fromNow()}
+                    {moment(new Date(created_at)).fromNow()}
                   </span>
                 </div>
               }
@@ -99,7 +99,7 @@ const CommentsList = ({ id }) => {
       >
       </List>
     </Card>
-  )
-}
+  );
+};
 
 export default CommentsList;

@@ -1,26 +1,26 @@
+import { EditOutlined, UserOutlined } from '@ant-design/icons';
+import { Affix, Row } from 'antd';
 import React from 'react';
-import { UserOutlined, EditOutlined } from '@ant-design/icons';
-import { useDispatch, useMappedState } from 'redux-react-hook';
 import InfiniteScroll from 'react-infinite-scroller';
-import { Row, Affix } from 'antd';
 import { Link } from 'react-router-dom';
-import { getHomeTimeline } from '../../actions/timeline';
+import { useDispatch, useMappedState } from 'redux-react-hook';
+import { getPublicTimeline } from '../../actions/timeline';
 import { LOGIN_URL } from '../../constants';
-import Post from './components/post';
 import CommentsList from './components/commentsList';
+import Post from './components/post';
 import styles from './index.module.scss';
 
 const mapStateTimeline = state => state.timeline;
 
-const Home = () => {
+export const Home = () => {
   const dispatch = useDispatch();
   const {
     home: { posts = [], page } = {},
     current
   } = useMappedState(mapStateTimeline);
   const handleInfiniteOnLoad = () => {
-    dispatch(getHomeTimeline({ page: page + 1 }));
-  }
+    dispatch(getPublicTimeline({ page: page + 1 }));
+  };
 
   return (
     <div className={styles.container}>
@@ -46,9 +46,8 @@ const Home = () => {
             id,
             ...rest
           }) => (
-              <>
+              <div key={id}>
                 <Post
-                  key={id}
                   id={id}
                   isCurrent={current === id}
                   {...rest}
@@ -57,7 +56,7 @@ const Home = () => {
                   current === id &&
                   <CommentsList id={current} />
                 }
-              </>
+              </div>
             ))
         }
       </InfiniteScroll>

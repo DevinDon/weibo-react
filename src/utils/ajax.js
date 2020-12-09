@@ -17,8 +17,8 @@ function makeGet() {
       url,
       method: 'get',
       ...option
-    })
-  }
+    });
+  };
 }
 
 
@@ -29,8 +29,8 @@ function makePost() {
       url,
       method: 'post',
       ...option
-    })
-  }
+    });
+  };
 }
 
 

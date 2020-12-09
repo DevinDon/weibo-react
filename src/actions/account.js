@@ -1,6 +1,6 @@
 import { message } from 'antd';
 import * as api from '../api/account';
-import { ACCESS_TOKEN_KEY, UID_KEY } from '../constants';
+import { ACCESS_TOKEN_KEY, APP_URI, UID_KEY } from '../constants';
 
 export function getAccess(params = {}) {
   return async () => {
@@ -8,10 +8,10 @@ export function getAccess(params = {}) {
       const { access_token, uid } = await api.getAccess(params);
       localStorage.setItem(ACCESS_TOKEN_KEY, access_token);
       localStorage.setItem(UID_KEY, uid);
-      console.log(access_token, uid);
+      await message.success('登录成功', 1.5);
     } catch (e) {
-      message.error('登录失败');
+      await message.error('登录失败', 1.5);
     }
-    window.location.href = '/';
-  }
+    window.location.href = APP_URI;
+  };
 }

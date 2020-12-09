@@ -1,18 +1,16 @@
-import React, { useEffect } from 'react';
-import queryString from 'query-string';
-import { useDispatch } from 'redux-react-hook';
 import { getAccess } from 'actions/account';
+import Loading from 'components/Loading';
+import queryString from 'query-string';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'redux-react-hook';
 
-
-const Login = () => {
+export const Login = () => {
   const dispatch = useDispatch();
-  const { query: { code }} = queryString.parseUrl(window.location.href);
+  const { query: { code } } = queryString.parseUrl(window.location.href);
   useEffect(() => {
-    if (code) {
-      dispatch(getAccess({ code }));
-    }
+    code && dispatch(getAccess({ code }));
   }, [code, dispatch]);
-  return <div>{code}</div>
-}
+  return <Loading tip="登录中，请稍候……" />;
+};
 
 export default Login;

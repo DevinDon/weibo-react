@@ -1,7 +1,7 @@
-export const uniq = (array) => {
+export const uniq = array => {
   const map = {};
   const result = [];
-  array.forEach((item) => {
+  array.forEach(item => {
     const { id } = item;
     if (!map[id]) {
       map[id] = 1;
@@ -9,4 +9,4 @@ export const uniq = (array) => {
     }
   });
   return result;
-}
+};

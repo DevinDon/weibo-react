@@ -1,0 +1,71 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "react-app"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/prop-types": "off",
+    "arrow-parens": [
+      "warn",
+      "as-needed"
+    ],
+    "comma-spacing": [
+      "warn",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "curly": [
+      "warn",
+      "all"
+    ],
+    "dot-location": [
+      "warn",
+      "property"
+    ],
+    "no-console": [
+      "warn"
+    ],
+    "no-unused-vars": [
+      "off"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "quote-props": [
+      "warn",
+      "as-needed"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "semi-style": [
+      "warn",
+      "last"
+    ]
+  }
+}
