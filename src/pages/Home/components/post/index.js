@@ -1,6 +1,7 @@
 import { LikeOutlined, MessageOutlined, RetweetOutlined } from '@ant-design/icons';
 import { setCurrentPost } from 'actions/timeline';
 import { Card } from 'antd';
+import { APP_URI } from '../../../../constants';
 import moment from 'moment';
 import React from 'react';
 import { useDispatch } from 'redux-react-hook';
