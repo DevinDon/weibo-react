@@ -1,4 +1,4 @@
-# 微博 Weibo App
+# 微博 Weibo
 
 [点击查看 Demo](https://demo.don.red/weibo)，如果同学有新的 idea，可以提交 PR 哦~
 
