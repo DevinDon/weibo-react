@@ -1,6 +1,7 @@
 import { LikeOutlined, MessageOutlined, RetweetOutlined } from '@ant-design/icons';
 import { setCurrentPost } from 'actions/timeline';
 import { Card } from 'antd';
+import { APP_URI } from '../../../../constants';
 import moment from 'moment';
 import React from 'react';
 import { useDispatch } from 'redux-react-hook';
@@ -11,20 +12,20 @@ export const getPostTitle = (
   created_at,
   source,
 ) => (
-    <div className={styles.user}>
-      <img
-        src={user.profile_image_url}
-        className={styles.avatar}
-        alt={user.screen_name}
-      />
-      <div className={styles.userInfo}>
-        <div>{user.screen_name}</div>
-        <div className={styles.extra}>
-          {moment(new Date(created_at)).fromNow()} 来自 <span dangerouslySetInnerHTML={{ __html: source }} />
-        </div>
+  <div className={styles.user}>
+    <img
+      src={user.profile_image_url}
+      className={styles.avatar}
+      alt={user.screen_name}
+    />
+    <div className={styles.userInfo}>
+      <div>{user.screen_name}</div>
+      <div className={styles.extra}>
+        {moment(new Date(created_at)).fromNow()} 来自 <span dangerouslySetInnerHTML={{ __html: source }} />
       </div>
     </div>
-  );
+  </div>
+);
 
 const Post = ({
   id,
@@ -43,7 +44,7 @@ const Post = ({
   const dispatch = useDispatch();
   const handleClickComment = () => {
     if (!comments_count) {
-      window.location.href = `/comments/${id}`;
+      window.location.href = `${APP_URI}/comments/${id}`;
     } else {
       dispatch(setCurrentPost({ id: isCurrent ? null : id }));
     }

@@ -31,7 +31,7 @@ export const Home = () => {
           align="middle"
         >
           <a href={LOGIN_URL}><UserOutlined className={styles.icon} /></a>
-          <div className={styles.appTitle}>Weibo app</div>
+          <div className={styles.appTitle}>Weibo</div>
           <Link to="/new"><EditOutlined className={styles.icon} /></Link>
         </Row>
       </Affix>
