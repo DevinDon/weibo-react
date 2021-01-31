@@ -93,7 +93,7 @@ const Post = ({
                 <div className={styles.imgContainer}>
                   <img src={thumbnail_pic}
                     alt={thumbnail_pic}
-                    onError={({ currentTarget }) => currentTarget.src = `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/' : ''}404.svg`}
+                    onError={({ currentTarget }) => currentTarget.src = `/${process.env.PUBLIC_URL ? process.env.PUBLIC_URL + '/' : ''}404.svg`}
                   />
                 </div>
               </li>
