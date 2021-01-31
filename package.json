@@ -1,6 +1,6 @@
 {
-  "name": "web-react-03-weibo-app",
-  "version": "0.1.0",
+  "name": "react-weibo",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "antd": "^4.4.3",
@@ -52,5 +52,22 @@
     "http-proxy-middleware": "^1.0.5",
     "node-sass": "^4.14.1",
     "react-app-rewired": "^2.1.6"
-  }
+  },
+  "description": "[点击查看 Demo](https://demo.don.red/weibo)，如果同学有新的 idea，可以提交 PR 哦~",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiuzhangsuanfa/react-weibo.git"
+  },
+  "keywords": [
+    "react",
+    "weibo",
+    "jiuzhang"
+  ],
+  "author": "jiuzhang",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jiuzhangsuanfa/react-weibo/issues"
+  },
+  "homepage": "https://github.com/jiuzhangsuanfa/web-react-03-weibo#readme"
 }

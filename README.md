@@ -4,4 +4,4 @@
 
 ## 如何使用
 
-首先使用 `npm i` 安装依赖，随后使用 `npm start` 启动服务器，在浏览器中打开 `http://localhost:3000` 即可看到效果。
+首先使用 `npm ci` 安装依赖，随后使用 `npm start` 启动服务器，在浏览器中打开 `http://localhost:3000` 即可看到效果。
