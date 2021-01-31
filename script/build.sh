@@ -1,8 +1,7 @@
 #!/bin/bash
 react-app-rewired build
 
-if [ "$TARGET" = "DEMO" ];
-then
+if [ "$TARGET" = "DEMO" ]; then
   cd build
   sed -i "s/$PUBLIC_URL\//BASE_HREF/" index.html
   sed -i "s/$PUBLIC_URL\///g" index.html
