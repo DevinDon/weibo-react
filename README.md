@@ -1,6 +1,6 @@
 # 微博 Weibo
 
-[点击查看 Demo](https://demo.don.red/weibo)，如果同学有新的 idea，可以提交 PR 哦~
+[点击查看 Demo](https://weibo.devin.red)。
 
 ## 如何使用
 
