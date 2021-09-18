@@ -1,5 +1,7 @@
 # 微博 Weibo
 
+> **此项目已归档并被整合，详情及更新见整合仓库 [GitHub: DevinDon/Demo/weibo](https://github.com/DevinDon/demo/tree/main/apps/weibo)**
+
 [点击查看 Demo](https://weibo.devin.red)。
 
 ## 如何使用
